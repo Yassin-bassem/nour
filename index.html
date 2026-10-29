@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>إلى نوري.. أجمل حاجة حصلت في حياتي ❤️</title>
+  
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="إلى خطيبتي ونور عيني وحتة من روحي.. نور. أنتي أجمل حاجة حصلتلي في حياتي ومعرفش أعيش من غيرك. تواريخنا: 6/9/2025 و 19/9/2025">
+  <meta property="og:title" content="إلى نوري.. سر سعادتي وأغلى ما في حياتي ❤️">
+  <meta property="og:description" content="أنتي أجمل حاجة حصلتلي في حياتي ومعرفش أعيش من غيرك يا حتة مني.. ربنا يخليكي ليا يا روحي وأشوف ضحكتك منورة على طول ✨">
+  <meta property="og:image" content="assets/images/nour_1.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0d0b14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Google Fonts: Alexandria, Cairo, and Amiri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&family=Marhey:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Audio Element with MP3 primary and M4A fallback for iOS Safari -->
+  <audio id="main-audio" preload="auto" loop playsinline>
+    <source src="assets/audio/song.mp3" type="audio/mpeg">
+    <source src="assets/audio/song.m4a" type="audio/mp4">
+  </audio>
+
+  <!-- Ambient Floating Glows (Hardware Accelerated) -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- INTRO OPENING ENVELOPE (iOS Gesture Unlock + Magical First Impression) -->
+  <div id="intro-overlay" class="intro-overlay">
+    <div class="intro-content">
+      <div class="envelope-wrapper" id="envelope-trigger">
+        <div class="envelope">
+          <div class="envelope-flap"></div>
+          <div class="envelope-pocket"></div>
+          <div class="envelope-letter">
+            <span class="letter-stamp">💍 19/9/2025</span>
+            <p class="letter-peek">إلى نور عيني وحبيبة قلبي.. 💌</p>
+          </div>
+          <div class="wax-seal">
+            <span class="seal-text">نور</span>
+            <span class="seal-icon">✨</span>
+          </div>
+        </div>
+      </div>
+      <h2 class="intro-title">رسالة خاصة لـ نوري وسر سعادتي</h2>
+      <p class="intro-subtitle">اضغطي هنا لتفتحي الهدية وتسمعي كلماتي ليكي 🎵❤️</p>
+      <button id="open-gift-btn" class="open-gift-btn">
+        <span>افتحي الرسالة يا روحي</span>
+        <svg class="heart-pulse-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </button>
+      <span class="intro-hint">صُمم بكل الحب لكي تبتسمي دائماً ✨</span>
+    </div>
+  </div>
+
+  <!-- FLOATING LUXURY MUSIC CONTROLLER (Safari & iPhone Optimized) -->
+  <aside class="floating-player" id="floating-player" aria-label="مشغل الموسيقى">
+    <div class="player-disc-wrap" id="player-disc-btn" title="تشغيل / إيقاف">
+      <div class="vinyl-record" id="vinyl-record">
+        <img src="assets/images/nour_5.jpg" alt="نور ومؤمن" class="disc-cover">
+        <div class="vinyl-center"></div>
+      </div>
+    </div>
+    
+    <div class="player-info">
+      <div class="track-header">
+        <span class="track-name">أنا ضهرك ومعاكي</span>
+        <span class="track-artist">بهاء سلطان 🎶</span>
+      </div>
+      <div class="equalizer-bars" id="equalizer-bars">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <div class="player-progress-container" id="progress-container">
+        <div class="player-progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="player-time-row">
+        <span id="current-time">0:00</span>
+        <span id="total-duration">3:16</span>
+      </div>
+    </div>
+
+    <div class="player-actions">
+      <button class="player-btn" id="play-pause-btn" aria-label="تشغيل">
+        <svg id="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <svg id="pause-icon" class="hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+      </button>
+      <a href="assets/audio/song.mp3" download="Bahaa_Sultan_Ana_Dahrek_Nour.mp3" class="player-btn download-btn" title="تحميل الأغنية للأيفون" id="iphone-download-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+      </a>
+    </div>
+  </aside>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-heart">❤️</span>
+        <span class="logo-text">نور & مؤمن</span>
+      </div>
+      <nav class="header-nav">
+        <a href="#letter" class="nav-link">رسالتي ليكي</a>
+        <a href="#milestones" class="nav-link">تواريخنا</a>
+        <a href="#reasons" class="nav-link">10 أسباب</a>
+        <a href="#gallery" class="nav-link">ذكرياتنا</a>
+        <a href="#forgive" class="nav-link special-nav">راضية عني؟ 🥺</a>
+      </nav>
+      <a href="#forgive" class="header-cta-btn">صالحتيني؟ ✨</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-badge">
+        <span class="badge-sparkle">✨</span>
+        <span>إلى خطيبتي ونور عيني وأغلى ما أملك</span>
+        <span class="badge-sparkle">✨</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="title-sub">يا كل دنيتي وحتة من روحي..</span>
+        <span class="title-main gradient-text">نور</span>
+      </h1>
+
+      <!-- Sincere Emotional Quote -->
+      <div class="hero-quote-card">
+        <div class="quote-ornament top-ornament">❝</div>
+        <p class="hero-quote-text">
+          "هي أجمل حاجة حصلتلي في حياتي.. ومعرفش أعيش من غيرك يا حتة مني.. 
+          ربنا يخليكي ليا يا روحي وأشوف ضحكتك منورة على طول."
+        </p>
+        <div class="quote-ornament bottom-ornament">❞</div>
+        <span class="quote-signature">— خطيبك اللي بيعشقك، مؤمن ❤️</span>
+      </div>
+
+      <!-- Sincere Apology Pill -->
+      <div class="apology-banner">
+        <div class="apology-icon">🥺</div>
+        <div class="apology-text">
+          <strong>حقك عليا يا غالية..</strong>
+          <span>زعلك ميهونش عليا أبداً، والدنيا كلها متسواش ثانية وانتي شايلة في خاطرك مني. أنا ضهرك وسندك وعمري ما هسمح لزعلك يطول.</span>
+        </div>
+      </div>
+
+      <!-- Hero Actions -->
+      <div class="hero-actions">
+        <a href="#forgive" class="primary-btn pulse-glow">
+          <span>راضية عني يا نور؟ 🥺❤️</span>
+        </a>
+        <a href="#letter" class="secondary-btn">
+          <span>اقرأي جواب قلبي ليكي 💌</span>
+        </a>
+      </div>
+
+      <!-- Quick Scroll Indicator -->
+      <div class="scroll-hint">
+        <span>انزلي لتحت وشوفي حكايتنا</span>
+        <div class="mouse-icon">
+          <div class="wheel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MILESTONES & LIVE LOVE COUNTER -->
+    <section class="milestones-section" id="milestones">
+      <div class="section-header">
+        <span class="section-tag">تواريخ محفورة بالذهب</span>
+        <h2 class="section-title">أجمل أيام بدأت بيها حكايتنا 💍</h2>
+        <p class="section-desc">أيام مش مجرد تواريخ في النتيجة.. دي اللحظات اللي اتولد فيها عمري الحقيقي معاكي.</p>
+      </div>
+
+      <div class="milestones-grid">
+        <!-- Milestone 1: Fatiha -->
+        <article class="milestone-card card-fatiha">
+          <div class="milestone-glow"></div>
+          <div class="milestone-icon-wrap">
+            <span class="milestone-icon">📖</span>
+          </div>
+          <div class="milestone-date-badge">6 سبتمبر 2025</div>
+          <h3 class="milestone-title">قراءة الفاتحة المباركة</h3>
+          <p class="milestone-story">
+            اليوم اللي جمع قلوبنا على سنة الله ورسوله، وأول خطوة رسمية عاهدت فيها ربنا إني أكون ضهرك وسندك وأحافظ عليكي طول ما فيا نفس.
+          </p>
+          <div class="counter-box" data-date="2025-09-06T00:00:00">
+            <span class="counter-label">مرت على قراءة فاتحتنا:</span>
+            <div class="counter-digits" id="fatiha-counter">
+              <div class="digit-col"><span class="digit-val" id="fatiha-days">--</span><span class="digit-name">يوم</span></div>
+              <div class="digit-col"><span class="digit-val" id="fatiha-hours">--</span><span class="digit-name">ساعة</span></div>
+              <div class="digit-col"><span class="digit-val" id="fatiha-minutes">--</span><span class="digit-name">دقيقة</span></div>
+              <div class="digit-col"><span class="digit-val" id="fatiha-seconds">--</span><span class="digit-name">ثانية</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Milestone 2: Engagement -->
+        <article class="milestone-card card-engagement featured-milestone">
+          <div class="milestone-glow"></div>
+          <div class="milestone-icon-wrap">
+            <span class="milestone-icon">💍</span>
+          </div>
+          <div class="milestone-date-badge">19 سبتمبر 2025</div>
+          <h3 class="milestone-title">يوم خطوبتنا اللي نور الدنيا</h3>
+          <p class="milestone-story">
+            اليوم اللي الدبل لمعت فيه في إيدينا وبقيتي خطيبتي ونور عيني قدام العالم كله.. أسعد وأجمل ليلة دقات قلبي فيها كانت بتقول اسمك.
+          </p>
+          <div class="counter-box" data-date="2025-09-19T00:00:00">
+            <span class="counter-label">مرت على خطوبتنا السعيدة:</span>
+            <div class="counter-digits" id="engagement-counter">
+              <div class="digit-col"><span class="digit-val" id="eng-days">--</span><span class="digit-name">يوم</span></div>
+              <div class="digit-col"><span class="digit-val" id="eng-hours">--</span><span class="digit-name">ساعة</span></div>
+              <div class="digit-col"><span class="digit-val" id="eng-minutes">--</span><span class="digit-name">دقيقة</span></div>
+              <div class="digit-col"><span class="digit-val" id="eng-seconds">--</span><span class="digit-name">ثانية</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Live Heartbeats Counter -->
+      <div class="heartbeats-strip">
+        <div class="heartbeat-icon-wrap">
+          <svg class="heart-pulse-svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+        <div class="heartbeat-info">
+          <span class="heartbeat-count" id="heartbeat-count">48,259,200</span>
+          <span class="heartbeat-label">نبضة قلب دقت بحبك ومحبتش غيرك من أول يوم ❤️</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- HEARTFELT APOLOGY & LOVE LETTER -->
+    <section class="letter-section" id="letter">
+      <div class="letter-frame">
+        <div class="letter-inner">
+          <div class="letter-header">
+            <span class="letter-date">من قلب خطيبك مؤمن.. إليكِ وحدك 💌</span>
+            <div class="wax-stamp-corner">نور</div>
+          </div>
+          
+          <h2 class="letter-headline">جواب اعتذار وحب من أعماق قلبي</h2>
+
+          <div class="letter-body">
+            <p class="letter-p">
+              <strong>حبيبتي ونور عيني وقطعة من روحي..</strong>
+            </p>
+            <p class="letter-p">
+              عارف إني زعلتك، ومن كل قلبي بقولك: <mark>حقك عليا يا أغلى ما عندي في الكون</mark>. 
+              زعلك تقيل أوي على قلبي، وميهونش عليا أبداً يمر يوم وإنتي شايلة في خاطرك مني أو ضحكتك القمر دي تغيب.
+            </p>
+            <p class="letter-p">
+              أنتي مش بس خطيبتي.. أنتي بنتي، وصاحبتي، وسندي، ونور بيتي الجاي بإذن الله. 
+              أنا معرفش أعيش من غيرك يا حتة مني، والله ما أقدر على بعدك ولا على لحظة تكوني فيها متضايقة.
+            </p>
+            <p class="letter-p">
+              زي ما الأغنية بتقول: <em>"أنا ضهرك وفي ضهرك ومعاكي"</em>.. 
+              أنا سندك اللي عمره ما هيسيب إيدك، وأنا الأمان اللي بتلجأي ليه. 
+              ولو العالم كله زعل، إنتي الوحيدة اللي لازم تفضلي راضية ومبسوطة ومبتسمة.
+            </p>
+            <p class="letter-p">
+              ربنا يخليكي ليا يا روحي، ويديمك نعمة في حياتي، ويقدرني أفرحك وأعوضك عن أي لحظة زعل.. 
+              سامحيني يا نور، وخليني أشوف الضحكة اللي بتنورلي دنيتي وترد فيا الروح. ❤️
+            </p>
+          </div>
+
+          <div class="letter-footer">
+            <div class="letter-sign">
+              <span>خطيبك وسندك اللي بيحبك للأبد</span>
+              <strong>مؤمن</strong>
+            </div>
+            <div class="letter-ring-icon">💍✨</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE "MAKE HER SMILE / FORGIVE ME" WIDGET -->
+    <section class="forgive-section" id="forgive">
+      <div class="forgive-card">
+        <div class="forgive-header">
+          <span class="forgive-tag">مهم جداً جداً 🥺</span>
+          <h2 class="forgive-title">صالحيني بقى يا نور عيني.. لسه زعلانة مني؟</h2>
+          <p class="forgive-prompt" id="forgive-prompt-text">
+            قلبي مش مستحمل يشوفك زعلانة.. سامحيني وخلي الضحكة تنور وشك من تاني!
+          </p>
+        </div>
+
+        <!-- Dynamic Apology Message Display -->
+        <div class="apology-dialog-bubble" id="apology-dialog">
+          <span class="bubble-emoji" id="bubble-emoji">🥺</span>
+          <span class="bubble-text" id="bubble-text">مستني تسامحيني يا نور عيني.. زعلك غالي عندي أوي!</span>
+        </div>
+
+        <div class="forgive-buttons-row">
+          <!-- The Yes/Forgive Button (Will grow on clicking "لسه شوية") -->
+          <button class="forgive-btn-yes" id="btn-forgive-yes">
+            <span class="btn-heart">❤️</span>
+            <span class="btn-text">سامحتك يا قلبي خلاص</span>
+          </button>
+
+          <!-- The playful No button -->
+          <button class="forgive-btn-no" id="btn-forgive-no">
+            <span class="btn-text">لسه شوية 😤</span>
+          </button>
+        </div>
+
+        <div class="forgive-counter-text" id="forgive-counter-hint">
+          اضغطي على الزرار عشان تشوفي مفاجأتك ✨
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 REASONS WHY I LOVE YOU -->
+    <section class="reasons-section" id="reasons">
+      <div class="section-header">
+        <span class="section-tag">من غير شروط ولا نهايات</span>
+        <h2 class="section-title">10 أسباب ليه أنتي كل حياتي ❤️</h2>
+        <p class="section-desc">اضغطي على كل بطاقة عشان تشوفي جزء صغير من اللي في قلبي ليكي.</p>
+        <div class="reasons-progress-wrap">
+          <span id="reasons-count-label">اكتشفتي 0 من 10 أسباب</span>
+          <div class="reasons-progress-bar"><div class="reasons-progress-fill" id="reasons-fill"></div></div>
+        </div>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card" data-index="1">
+          <div class="reason-number">01</div>
+          <div class="reason-icon">✨</div>
+          <h3 class="reason-heading">ضحكتك اللي بتنور دنيتي</h3>
+          <p class="reason-text">اليوم اللي بشوف فيه ضحكتك بيبقى أجمل يوم في عمري، بتنسيني أي تعب أو هم في ثانية واحدة.</p>
+          <span class="tap-hint">المسي البطاقة 💫</span>
+        </div>
+
+        <div class="reason-card" data-index="2">
+          <div class="reason-number">02</div>
+          <div class="reason-icon">🤍</div>
+          <h3 class="reason-heading">قلبك الأبيض النقي</h3>
+          <p class="reason-text">طيبة قلبك ونيتك الصافية مفيش زيهم في العالم، إنسانة حنينة وجميلة من جوة ومن برة.</p>
+          <span class="tap-hint">المسي البطاقة 💫</span>
+        </div>
+
+        <div class="reason-card" data-index="3">
+          <div class="reason-number">03</div>
+          <div class="reason-icon">🤲</div>
+          <h3 class="reason-heading">أجمل رزق من ربنا</h3>
+          <p class="reason-text">دعيت ربنا بحد شبه قلبي، فرزقني بيكي أنتي.. أعظم هدية ونعمة شكرت ربنا عليها.</p>
+          <span class="tap-hint">المسي البطاقة 💫</span>
+        </div>
+
+        <div class="reason-card" data-index="4">
+          <div class="reason-number">04</div>
+          <div class="reason-icon">🛡️</div>
+          <h3 class="reason-heading">سندي وأماني</h3>
+          <p class="reason-text">وجودك في حياتي بيديني قوة وطاقة إيجابية، وبحس براحة وأمان ملهمش مثيل طول ما أنتي معايا.</p>
+          <span class="tap-hint">المسي البطاقة 💫</span>
+        </div>
+
+        <div class="reason-card" data-index="5">
+          <div class="reason-number">05</div>
+          <div class="reason-icon">🌸</div>
+          <h3 class="reason-heading">حنيتك واهتمامك</h3>
+          <p class="reason-text">خوفك عليا وسؤالك المستمر واهتمامك بأدق تفاصيلي بيخليني فخور إني اخترت أحن بنت في الدنيا.</p>
+          <span class="tap-hint">المسي البطاقة 💫</span>
+        </div>
+
+        <div class="reason-card" data-index="6">
+          <div class="reason-number">06</div>
+          <div class="reason-icon">💍</div>
+          <h3 class="reason-heading">شريكة عمري وخطيبتي</h3>
+          <p class="reason-text">البنت اللي فخور إني لابس دبلتها قدام الناس، واللي مستني اليوم اللي يجمعنا فيه بيت واحد.</p>
+          <span class="tap-hint">المسي البطاقة 💫</span>
+        </div>
+
+        <div class="reason-card" data-index="7">
+          <div class="reason-number">07</div>
+          <div class="reason-icon">☕</div>
+          <h3 class="reason-heading">أحلى ذكريات وقعدات</h3>
+          <p class="reason-text">أي مكان بكون فيه معاكي بيبقى جَنّة، حتى لو قعدة بسيطة بنشرب فيها فنجان قهوة وبنحكي سوا.</p>
+          <span class="tap-hint">المسي البطاقة 💫</span>
+        </div>
+
+        <div class="reason-card" data-index="8">
+          <div class="reason-number">08</div>
+          <div class="reason-icon">🌟</div>
+          <h3 class="reason-heading">روحك الحلوة وخفة دمك</h3>
+          <p class="reason-text">شقاوتك وضحكتك وهزارك العفوي اللي بيخطف قلبي كل يوم وبيخليني أحبك أكتر وأكتر.</p>
+          <span class="tap-hint">المسي البطاقة 💫</span>
+        </div>
+
+        <div class="reason-card" data-index="9">
+          <div class="reason-number">09</div>
+          <div class="reason-icon">🕊️</div>
+          <h3 class="reason-heading">لأنك بتفهميني من نظرة</h3>
+          <p class="reason-text">من غير ما أتكلم بتكوني عارفة اللي في بالي، قريبة من روحي لدرجة إني بشوفك مرايتي.</p>
+          <span class="tap-hint">المسي البطاقة 💫</span>
+        </div>
+
+        <div class="reason-card" data-index="10">
+          <div class="reason-number">10</div>
+          <div class="reason-icon">❤️</div>
+          <h3 class="reason-heading">لأنك حتة مني ومقدرش أعيش بدونك</h3>
+          <p class="reason-text">أنتي مش جزء من حياتي.. أنتي كل حياتي، وببساطة شديدة: معرفش أعيش من غيرك يا نور عيني!</p>
+          <span class="tap-hint">المسي البطاقة 💫</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY / BEST MOMENTS -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-header">
+        <span class="section-tag">شريط العمر والذكريات الحلوة</span>
+        <h2 class="section-title">أجمل لحظاتنا سوا 📸</h2>
+        <p class="section-desc">كل صورة هنا وراها حكاية وفرحة.. اضغطي على أي صورة عشان تكبريها وتفتكري اللحظة الحلوة.</p>
+      </div>
+
+      <!-- Gallery Filter Tabs -->
+      <div class="gallery-tabs">
+        <button class="tab-btn active" data-filter="all">جميع اللحظات (16)</button>
+        <button class="tab-btn" data-filter="smile">ضحكتك اللي بتنورلي ✨</button>
+        <button class="tab-btn" data-filter="outings">خروجاتنا وسعادتنا 🌸</button>
+        <button class="tab-btn" data-filter="love">أنا وأنتي سوا 💍</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Photo 1 -->
+        <div class="gallery-item" data-category="love" data-src="assets/images/nour_1.jpg" data-caption="ضحكتك اللي بتنور عتمة أي ليل ✨ — ليلة من أجمل ليالينا سوا">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_1.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay">
+                <span class="zoom-icon">🔍 تكبير</span>
+              </div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">ضحكتك منورة دنيتي ✨</span>
+              <span class="caption-date">أحلى ليلة</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="gallery-item" data-category="smile" data-src="assets/images/nour_2.jpg" data-caption="أجمل صدفة وأغلى نصيب ربنا كتبهولي في الدنيا ❤️">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_2.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">أغلى نصيب في عمري 🌸</span>
+              <span class="caption-date">ذكرى غالية</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="gallery-item" data-category="outings" data-src="assets/images/nour_3.jpg" data-caption="شمس عمري ونور أيامي ☀️ — دايماً جنبي وفرحتي فيكي متتوصفش">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_3.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">شمس عمري ونور أيامي ☀️</span>
+              <span class="caption-date">يوم مميز</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="gallery-item" data-category="love" data-src="assets/images/nour_4.jpg" data-caption="أنتي الأمان والسكينة 🕊️ — ربنا يحفظك ليا يا أغلى إنسانة">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_4.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">الأمان والسكينة 🕊️</span>
+              <span class="caption-date">مع بعض دايماً</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="gallery-item" data-category="smile" data-src="assets/images/nour_5.jpg" data-caption="روح قلبي وشقاوة عمري 🥰 — اللحظة اللي بكون فيها معاكي بتسوى الدنيا وما فيها">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_5.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">روح قلبي وشقاوة عمري 🥰</span>
+              <span class="caption-date">بتسوى الدنيا</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="gallery-item" data-category="love" data-src="assets/images/nour_6.jpg" data-caption="نظرة عينيكي دي كفاية ترد روحي 💫 — ربنا يديم حبنا وضحكتنا دايماً">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_6.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">نظرة عينيكي بترد الروح 💫</span>
+              <span class="caption-date">حب العمر</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 7 -->
+        <div class="gallery-item" data-category="love" data-src="assets/images/nour_7.jpg" data-caption="شريكة عمري وخطيبتي القمر 💍 — فخور بيكي قدام الدنيا كلها">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_7.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">خطيبتي وقمر حياتي 💍</span>
+              <span class="caption-date">فخري وسندي</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 8 -->
+        <div class="gallery-item" data-category="outings" data-src="assets/images/nour_8.jpg" data-caption="سندي وضهري وراحتي 🤍 — مفيش زيك ولا هييجي في طيبة قلبك أبداً">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_8.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">سندي وراحتي 🤍</span>
+              <span class="caption-date">قلبك الأبيض</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 9 -->
+        <div class="gallery-item" data-category="outings" data-src="assets/images/nour_9.jpg" data-caption="أحلى قعدة وأحلى فنجان قهوة معاكي ☕ — دفء وراحة وأمان جنب حبيبة قلبي">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_9.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">أحلى فنجان قهوة سوا ☕</span>
+              <span class="caption-date">دفء وأمان</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 10 -->
+        <div class="gallery-item" data-category="smile" data-src="assets/images/nour_10.jpg" data-caption="ضحكة من القلب متتنسيش 😊 — ربنا ما يحرمني من بسمتك اللي بتسعدني">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_10.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">ضحكة من أعماق القلب 😊</span>
+              <span class="caption-date">فرحة متتوصفش</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 12 -->
+        <div class="gallery-item" data-category="smile" data-src="assets/images/nour_12.jpg" data-caption="أنا وأنتي ضد أي زعل في الدنيا ✌️ — مفيش حاجة تفرقنا أبداً يا نور">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_12.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">أنا وأنتي ضد أي زعل ✌️</span>
+              <span class="caption-date">سوا علطول</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 13 -->
+        <div class="gallery-item" data-category="love" data-src="assets/images/nour_13.jpg" data-caption="أجمل أيام في العمر 🌸 — كل يوم بقضيه معاكي بيبقى عيد في عيني">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_13.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">أيام من دهب 🌸</span>
+              <span class="caption-date">كل يوم عيد</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 14 -->
+        <div class="gallery-item" data-category="love" data-src="assets/images/nour_14.jpg" data-caption="حبيبتي وبنتي وأغلى ما ليا 💖 — ملكة قلبي دايماً وعروسة بيتي الجاي">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_14.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">ملكة قلبي دايماً 💖</span>
+              <span class="caption-date">حبيبة روحي</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 15 -->
+        <div class="gallery-item" data-category="outings" data-src="assets/images/nour_15.jpg" data-caption="خطوتنا سوا وأجمل بداية 🌿 — طريقنا واحد وقلوبنا مربوطة ببعض برباط متين">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_15.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">خطوتنا سوا وأجمل بداية 🌿</span>
+              <span class="caption-date">طريق واحد</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 16 -->
+        <div class="gallery-item" data-category="smile" data-src="assets/images/nour_16.jpg" data-caption="ضحكتك سحر بينور حياتي ✨ — متزعليش وخليكي مبتسمة دايماً يا نور">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_16.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">ضحكتك سحر بينورني ✨</span>
+              <span class="caption-date">خليكي مبتسمة</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 17 -->
+        <div class="gallery-item" data-category="love" data-src="assets/images/nour_17.jpg" data-caption="نور عيني وقطعة من روحي 🌹 — بحبك ومعرفش أعيش من غيرك أبداً">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrap">
+              <img src="assets/images/nour_17.jpg" alt="نور ومؤمن" loading="lazy">
+              <div class="polaroid-overlay"><span class="zoom-icon">🔍 تكبير</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <span class="caption-text">نور عيني وقطعة من روحي 🌹</span>
+              <span class="caption-date">بحبك للأبد</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMISES SECTION ("عهودي ليكي") -->
+    <section class="promises-section" id="promises">
+      <div class="section-header">
+        <span class="section-tag">عهد ووعد شرف</span>
+        <h2 class="section-title">عهودي ليكي يا نور عيني 💍</h2>
+        <p class="section-desc">وعود من خطيبك وسندك محفورة في قلبي طول العمر.</p>
+      </div>
+
+      <div class="promises-grid">
+        <div class="promise-card">
+          <div class="promise-icon">🛡️</div>
+          <h3>هفضل ضهرك وسندك</h3>
+          <p>في كل وقت وفي أي ظرف، هكون أول واحد يقف جنبك ويحميكي ويدعمك ويكون أمانك الدائم.</p>
+        </div>
+
+        <div class="promise-card">
+          <div class="promise-icon">✨</div>
+          <h3>هحافظ على ضحكتك دي</h3>
+          <p>عمري ما هكون سبب في دموعك، وهعمل كل اللي في وسعي عشان أشوف ابتسامتك الحلوة منورة وشك علطول.</p>
+        </div>
+
+        <div class="promise-card">
+          <div class="promise-icon">🏡</div>
+          <h3>هبني معاكي بيتنا الجميل</h3>
+          <p>هنسعى سوا ونحقق كل أحلامنا، ونبني بيت مليان حب ومودة ورحمة ورضا من ربنا.</p>
+        </div>
+
+        <div class="promise-card">
+          <div class="promise-icon">❤️</div>
+          <h3>هفضّل أحبك أكتر كل يوم</h3>
+          <p>حبي ليكي مش كلام.. ده نبض عايش بيا وبيكبر مع كل دقيقة بتعدي وانتي منورة حياتي.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IPHONE AUDIO DOWNLOAD CARD -->
+    <section class="download-section" id="download">
+      <div class="download-card">
+        <div class="download-visual">
+          <div class="iphone-mockup">
+            <div class="notch"></div>
+            <div class="iphone-screen">
+              <div class="mini-album-art">
+                <img src="assets/images/nour_1.jpg" alt="أنا ضهرك">
+              </div>
+              <span class="mini-song-title">أنا ضهرك - بهاء سلطان</span>
+              <span class="mini-song-sub">مخصوص لـ نور عيني ❤️</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="download-content">
+          <span class="download-tag">للتحميل المباشر على الأيفون 📱</span>
+          <h2>أغنيتنا المفضلة جاهزة لجهازك</h2>
+          <p>
+            حملي الأغنية بجودة عالية MP3 بصوت ملك السلطنة بهاء سلطان عشان تسمعيها في أي وقت وتفتكري إني دايماً في ضهرك ومعاكي.
+          </p>
+          <div class="download-btns-wrap">
+            <a href="assets/audio/song.mp3" download="Bahaa_Sultan_Ana_Dahrek_Nour.mp3" class="primary-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="btn-svg"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+              <span>تحميل الأغنية MP3 (للأيفون)</span>
+            </a>
+          </div>
+          <span class="ios-hint">💡 لأجهزة iPhone: اضغطي تحميل ثم اختاري "حفظ في الملفات" أو استمعي إليها مباشرة من المشغل هنا.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX MODAL (Swipeable & Mobile Friendly) -->
+  <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close-btn" id="lightbox-close" aria-label="إغلاق">✕</button>
+      
+      <button class="lightbox-nav-btn prev-btn" id="lightbox-prev" aria-label="السابق">❯</button>
+      <div class="lightbox-image-box">
+        <img src="" alt="" id="lightbox-img" class="lightbox-img">
+        <div class="lightbox-caption-bar" id="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav-btn next-btn" id="lightbox-next" aria-label="التالي">❮</button>
+
+      <div class="lightbox-counter" id="lightbox-counter">1 / 16</div>
+    </div>
+  </div>
+
+  <!-- CELEBRATION MODAL ("سامحتك خلاص") -->
+  <div class="celebration-modal" id="celebration-modal" aria-hidden="true">
+    <div class="celebration-backdrop"></div>
+    <div class="celebration-card">
+      <div class="celebration-ring">💍</div>
+      <div class="celebration-hearts-burst">❤️❤️❤️❤️</div>
+      <h2 class="celebration-title">الحمد لله.. روحي ردت فيا! 🥰❤️</h2>
+      <p class="celebration-text">
+        أحلى كلمة سمعتها وأجمل هدية لقلبي! ربنا ما يحرمني منك أبداً يا نور، ولا يحرمني من قلبك الطيب الأبيض. 
+        وعد مني أكون دايماً سندك وضهرك وفرحتك في الدنيا كلها!
+      </p>
+      <div class="celebration-couple-preview">
+        <img src="assets/images/nour_5.jpg" alt="نور ومؤمن">
+        <span>بحبك قد الدنيا كلها يا حتة مني! ❤️</span>
+      </div>
+      <button class="celebration-close-btn" id="celebration-close">
+        <span>بحبك يا مؤمن ❤️</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- CONFETTI CANVAS FOR CELEBRATION -->
+  <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-rings">💍✨</div>
+        <p class="footer-quote">
+          "ومعرفش أعيش من غيرك يا حتة مني.. ربنا يخليكي ليا يا روحي وأشوف ضحكتك منورة على طول"
+        </p>
+      </div>
+      <div class="footer-milestones">
+        <span>قراءة الفاتحة: 6 سبتمبر 2025</span>
+        <span class="sep">•</span>
+        <span>يوم خطوبتنا: 19 سبتمبر 2025</span>
+      </div>
+      <div class="footer-bottom">
+        <p>صُنع بكل حب ووفاء لـ <strong>نور</strong> من خطيبها <strong>مؤمن</strong> ❤️</p>
+        <span class="copyright">جميع الحقوق محفوظة لقلوبنا الجميلة © 2025 - 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
